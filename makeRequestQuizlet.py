@@ -1,6 +1,3 @@
-import requests
-
-
 def post_set():
 	request = open("request.sh", "w")
 	quiz = open("quizlet", "r")
