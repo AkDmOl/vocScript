@@ -1,0 +1,18 @@
+delay 10
+tell application "System Events"
+    set frontApp to first application process whose frontmost is true
+    set frontAppName to name of frontApp
+    tell process frontAppName
+	try 
+            tell menu bar item "Правка" of menu bar 1
+                click menu item "Скопировать" of menu 1
+            end tell
+	on error errMsg number errorNumber
+	    tell menu bar item "Edit" of menu bar 1
+                click menu item "Copy" of menu 1
+            end tell
+	end try
+    end tell
+end tell
+delay 0.1
+
